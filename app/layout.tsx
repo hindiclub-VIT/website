@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Hindi Club - VIT Bhopal",
   description: "Official website of Hindi Club at VIT Bhopal - Promoting Hindi language and culture",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
