@@ -194,21 +194,21 @@ export default function HomePage() {
 
   const photoAlbums = [
     {
-      title: "Hindi Day 2023",
-      titleHindi: "हिंदी दिवस 2023",
-      images: ["/hindi-day-celebration-students.png", "/cultural-performance-stage.png", "/hindi-student-banners.png"],
-      description: "Grand celebration honoring our national language",
-      eventDate: "September 14, 2023",
+      title: "Kavyanjali",
+      titleHindi: "काव्यांजलि 2023",
+      images: ["Kavyanjali/20230727_142744.png","Kavyanjali/IMG_20230727_163837.jpg","Kavyanjali/20230727_144514.png","Kavyanjali/_MG_5623.JPG","Kavyanjali/IMG_9323.JPG","Kavyanjali/K1.png","Kavyanjali/K2.JPG","Kavyanjali/K3.jpg","Kavyanjali/K4.jpg","Kavyanjali/K5.JPG","Kavyanjali/K6.JPG","Kavyanjali/K7.JPG","Kavyanjali/K8.JPG","Kavyanjali/K9.JPG"],
+      description: "A vibrant event celebrating poetry, where participants share heartfelt verses and literary expressions",
+      eventDate: "July 27, 2023",
       participants: 200,
     },
-    {
-      title: "Poetry Competition",
-      titleHindi: "कविता प्रतियोगिता",
-      images: ["/poetry-competition-students.png", "/student-reciting-poetry.png", "/placeholder-q8lg9.png"],
-      description: "Showcasing the poetic talents of our students",
-      eventDate: "January 15, 2024",
-      participants: 85,
-    },
+    // {
+    //   title: "Poetry Competition",
+    //   titleHindi: "कविता प्रतियोगिता",
+    //   images: ["/poetry-competition-students.png", "/student-reciting-poetry.png", "/placeholder-q8lg9.png"],
+    //   description: "Showcasing the poetic talents of our students",
+    //   eventDate: "January 15, 2024",
+    //   participants: 85,
+    // },
   ]
 
   const achievements = [
@@ -851,7 +851,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Card>
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-4 gap-6">
                   {album.images.map((image, imgIndex) => (
                     <div key={imgIndex} className="relative group overflow-hidden rounded-2xl shadow-lg">
                       <Image

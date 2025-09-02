@@ -42,7 +42,7 @@ export default function GalleryPage() {
   const galleryItems = [
     {
       id: 1,
-      title: "Hindi Day Grand Celebration 2023",
+      title: "Kavyanjali",
       titleHindi: "हिंदी दिवस महोत्सव 2023",
       description: "A magnificent celebration of our national language with cultural performances",
       descriptionHindi: "सांस्कृतिक प्रस्तुतियों के साथ राष्ट्रभाषा का भव्य समारोह",
