@@ -223,6 +223,24 @@ body {
   }
 }
 
+@keyframes fadeInOut {
+  0%, 40% { opacity: 1; }
+  60%, 100% { opacity: 0; }
+}
+
+@keyframes fadeInOutDelayed {
+  0%, 40% { opacity: 0; }
+  60%, 100% { opacity: 1; }
+}
+
+.mission-english, .vision-english, .activities-english {
+  animation: fadeInOut 6s infinite;
+}
+
+.mission-hindi, .vision-hindi, .activities-hindi {
+  animation: fadeInOutDelayed 6s infinite;
+}
+
 /* Animation Classes */
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
