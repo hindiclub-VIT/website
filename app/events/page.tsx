@@ -147,7 +147,7 @@ export default function EventsPage() {
       time: "7:00 PM",
       venue: "Open Air Theatre, VIT Bhopal",
       venueHindi: "खुला हवा रंगमंच, VIT भोपाल",
-      category: "cultural",
+      category: "celebration",
       status: "completed",
       registrations: 123,
       capacity: 150,
