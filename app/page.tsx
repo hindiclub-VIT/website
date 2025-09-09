@@ -119,8 +119,8 @@ export default function HomePage() {
 
   const coreTeam = [
     {
-      name: "Dr. Priya Sharma",
-      nameHindi: "डॉ. प्रिया शर्मा",
+      name: "Dr. Rajeev Saxena",
+      nameHindi: "डॉ. राजीव सक्सेना",
       position: "Faculty Coordinator",
       positionHindi: "संकाय समन्वयक",
       image: "/faculty-coordinator.png",
@@ -153,12 +153,12 @@ export default function HomePage() {
       },
     },
     {
-      name: "Priya Gupta",
-      nameHindi: "प्रिया गुप्ता",
+      name: "Dheeraj Saraswat",
+      nameHindi: "धीरज सारस्वत",
       position: "Vice President",
       positionHindi: "उपाध्यक्ष",
       image: "/indian-student-vice-president.png",
-      branch: "Electronics & Communication",
+      branch: "Computer Science & Engineering - Core",
       year: "Third Year",
       rollNumber: "21BEC2345",
       email: "priya.gupta2021@vitbhopal.ac.in",
@@ -172,16 +172,16 @@ export default function HomePage() {
       },
     },
     {
-      name: "Rahul Verma",
-      nameHindi: "राहुल वर्मा",
+      name: "Garv Anand",
+      nameHindi: "गर्व आनंद",
       position: "General Secretary",
       positionHindi: "महासचिव",
       image: "/indian-student-secretary.png",
-      branch: "Mechanical Engineering",
+      branch: "Computer Science & Engineering - AI & ML",
       year: "Third Year",
-      rollNumber: "21BME3456",
-      email: "rahul.verma2021@vitbhopal.ac.in",
-      phone: "+91 98765 43212",
+      rollNumber: "23BAI10605",
+      email: "garv.23bai10605@vitbhopal.ac.in",
+      phone: "+91 8054182892",
       quote: "Success lies in organization",
       quoteHindi: "व्यवस्था में सफलता है",
       achievements: ["Best Organizer Award", "Event Management Excellence", "Student Council Member"],
@@ -320,8 +320,15 @@ export default function HomePage() {
             {/* Logo Section */}
             <Link href="/" className="flex items-center space-x-4 group">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 via-rose-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <span className="text-white font-bold text-lg hindi-text">हि</span>
+                <div className="w-15 h-15 bg-gradient-to-br from-orange-500 via-white to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
+                  <Image
+                    src="/Logo.png"
+                    alt="Hindi Club Logo"
+                    width={48}
+                    height={48}
+                    className="object-contain w-13 h-13"
+                    priority
+                  />
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <Sparkles className="w-2 h-2 text-orange-600" />
@@ -469,7 +476,11 @@ export default function HomePage() {
       </header>
 
       {/* Enhanced Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-rose-50/30 to-pink-50/50"></div>
@@ -487,22 +498,39 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            {/* Animated Logo */}
-            <div className="mb-12 animate-fade-in-up">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-500 via-rose-500 to-pink-500 rounded-2xl shadow-2xl mb-8 hover:scale-105 transition-transform duration-500">
-                <span className="text-white font-bold text-3xl hindi-text">हि</span>
+            {/* Hero Heading with Logo */}
+            <div className="flex flex-col items-center mb-12 animate-fade-in-up">
+              {/* Logo */}
+              
+              <br/>
+              <br/>
+              <br/>
+              <div className="inline-flex items-center justify-center w-70 h-25 bg-gradient-to-br from-orange-500 via-rose-500 to-pink-500 rounded-2xl shadow-2xl mb-6 hover:scale-105 transition-transform duration-500">
+                <img
+                  src="/VIT-Bhopal-logo.png"
+                  alt="VIT Bhopal Logo"
+                  className="w-70 h-25 object-contain"
+                  style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.10))" }}
+                />
+                
               </div>
-            </div>
 
-            {/* Main Heading */}
-            <div className="space-y-6 mb-12">
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent animate-fade-in-up delay-200">
+              {/* Headings */}
+              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent">
                 Hindi Club
               </h1>
-              <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-rose-600 to-pink-600 bg-clip-text text-transparent hindi-text animate-fade-in-up delay-300">
+              <h2
+                className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-rose-600 to-pink-600 bg-clip-text text-transparent hindi-text"
+                style={{
+                  fontFamily: "'Samarkan', Arial, sans-serif",
+                  lineHeight: "1.5",
+                  paddingTop: "0.75rem",
+                  paddingBottom: "0.25rem",
+                }}
+              >
                 हिंदी क्लब
               </h2>
-              <div className="flex items-center justify-center space-x-4 animate-fade-in-up delay-400">
+              <div className="flex items-center justify-center space-x-4 mt-4">
                 <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-orange-400"></div>
                 <Star className="w-6 h-6 text-yellow-500" />
                 <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-rose-400"></div>
@@ -511,11 +539,16 @@ export default function HomePage() {
 
             {/* Subtitle */}
             <div className="space-y-4 mb-12 animate-fade-in-up delay-500">
-              <p className="text-2xl md:text-3xl font-semibold text-gray-800">VIT Bhopal University</p>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Preserving and promoting Hindi language and culture through innovative programs and cultural excellence
+              <p className="text-2xl md:text-3xl font-semibold text-gray-800">
+                VIT Bhopal University
               </p>
-              <p className="text-base md:text-lg text-gray-500 hindi-text">भाषा की शक्ति से जुड़ें, संस्कृति का सम्मान करें</p>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Preserving and promoting Hindi language and culture through innovative
+                programs and cultural excellence
+              </p>
+              <p className="text-base md:text-lg text-gray-500 hindi-text">
+                भाषा की शक्ति से जुड़ें, संस्कृति का सम्मान करें
+              </p>
             </div>
 
             {/* CTA Buttons */}
@@ -536,40 +569,35 @@ export default function HomePage() {
                 Explore Events
               </Button>
             </div>
-
-            {/* Achievement Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-up delay-900">
-              {achievements.map((achievement, index) => (
-                <Card
-                  key={index}
-                  className="group bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                >
-                  <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-r ${achievement.color} rounded-xl flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      {achievement.icon}
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">{achievement.count}</div>
-                    <div className="text-sm font-medium text-gray-700 mb-1">{achievement.title}</div>
-                    <div className="text-xs text-gray-500">{achievement.description}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
+      {/* Achievement Stats */}
+      <div className="w-full flex justify-center px-4">
+        <div className="w-full max-w-6xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-up delay-900">
+          {achievements.map((achievement, index) => (
+            <Card
+              key={index}
+              className="group bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <CardContent className="p-6 text-center">
+                <div
+                  className={`w-12 h-12 bg-gradient-to-r ${achievement.color} rounded-xl flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {achievement.icon}
+                </div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">{achievement.count}</div>
+                <div className="text-sm font-medium text-gray-700 mb-1">{achievement.title}</div>
+                <div className="text-xs text-gray-500">{achievement.description}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
       {/* Enhanced About Section */}
-      <section id="about" className="py-24 bg-gradient-to-br from-white to-gray-50">
+      {/* <section id="about" className="py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <div className="inline-flex items-center space-x-4 mb-6">
@@ -627,7 +655,133 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section> */}
+
+
+
+    {/*new about us section */}
+      <section id="about" className="py-24 bg-gradient-to-br from-white to-gray-50">
+        
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-4 mb-6">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-blue-400"></div>
+              <h2 className="text-5xl font-bold text-gray-900">About Us</h2>
+              <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-purple-400"></div>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Fostering Hindi language and cultural excellence at VIT Bhopal University
+            </p>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {/* Mission Card */}
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 border-0 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
+              <CardHeader className="pb-6 pt-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-bold text-blue-900">
+                  Our Mission
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-8">
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  To preserve and promote the rich heritage of Hindi language and Indian culture through innovative
+                  educational programs, cultural events, and community engagement at VIT Bhopal University.
+                </p>
+              </CardContent>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-blue-200/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+            </Card>
+
+            {/* Vision Card */}
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-purple-50 via-purple-100 to-pink-100 border-0 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-pink-500"></div>
+              <CardHeader className="pb-6 pt-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-bold text-purple-900">
+                  Our Vision
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-8">
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  To create a vibrant community of Hindi language enthusiasts who appreciate literature, culture, and
+                  traditions while embracing modern educational values.
+                </p>
+              </CardContent>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-purple-200/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+            </Card>
+
+            {/* Image Card */}
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 border-0 shadow-xl hover:shadow-2xl transition-all duration-700">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-red-500"></div>
+              <div className="p-4">
+                <div className="relative overflow-hidden rounded-xl">
+                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-200/40 to-red-200/40 rounded-xl blur-lg group-hover:blur-xl transition-all duration-700"></div>
+                  <Image
+                    src="/vit-bhopal-hindi-club-activities.png"
+                    alt="VIT Bhopal Hindi Club Activities"
+                    width={400}
+                    height={500}
+                    className="relative w-full h-80 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="pt-6">
+                  <h3 className="text-xl font-bold text-orange-900 mb-2">Our Activities</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Experience the vibrant world of Hindi literature, poetry, cultural performances, and literary discussions that bring our community together.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Statistics Section */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-white">50+</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">Active Members</h4>
+              <p className="text-sm text-gray-600">Passionate students</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-white">25+</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">Events Organized</h4>
+              <p className="text-sm text-gray-600">Cultural programs</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-white">10+</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">Awards Won</h4>
+              <p className="text-sm text-gray-600">Recognition achieved</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl font-bold text-white">5+</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">Years Active</h4>
+              <p className="text-sm text-gray-600">Continuous service</p>
+            </div>
+          </div>
+        </div>
       </section>
+
+
+
+
+
 
       {/* Enhanced Team Section */}
       <section id="team" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -899,6 +1053,7 @@ export default function HomePage() {
                   <Link href="#about" className="text-gray-400 hover:text-orange-400 transition-colors">
                     About Us
                   </Link>
+
                 </li>
                 <li>
                   <Link href="#events" className="text-gray-400 hover:text-rose-400 transition-colors">
