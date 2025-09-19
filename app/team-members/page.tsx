@@ -1,13 +1,20 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Users } from "lucide-react"
+import { Users, Mail, Linkedin, Instagram } from "lucide-react"
 
 type Member = {
   name: string
+  nameHindi?: string
   regno: string
   batch: string
   role: string
+  roleHindi?: string
+  department?: string
+  email?: string
+  linkedin?: string
+  instagram?: string
+  image?: string
 }
 
 type TeamData = Record<string, Member[]>
@@ -88,38 +95,118 @@ export default function TeamMembersPage() {
     setTeams(data)
   }, [])
 
-  const teamColors: Record<string, string> = {
-    "Cultural Team": "from-pink-500 to-red-500",
-    "Content Team": "from-yellow-500 to-orange-500",
-    "Event Management": "from-green-500 to-emerald-500",
-    "Design Team": "from-blue-500 to-cyan-500",
-    "PR & Outreach": "from-purple-500 to-indigo-500",
-    "Tech Team": "from-gray-500 to-slate-500",
-    "Social Media Team": "from-teal-500 to-blue-500"
+  const teamColors: Record<string, { gradient: string, bg: string }> = {
+    "Core Team": { 
+      gradient: "from-orange-500 to-red-500",
+      bg: "bg-orange-50"
+    },
+    "Cultural Team": { 
+      gradient: "from-pink-500 to-red-500",
+      bg: "bg-pink-50"
+    },
+    "Content Team": { 
+      gradient: "from-yellow-500 to-orange-500",
+      bg: "bg-yellow-50"
+    },
+    "Event Management": { 
+      gradient: "from-green-500 to-emerald-500",
+      bg: "bg-green-50"
+    },
+    "Design Team": { 
+      gradient: "from-blue-500 to-cyan-500",
+      bg: "bg-blue-50"
+    },
+    "PR & Outreach": { 
+      gradient: "from-purple-500 to-indigo-500",
+      bg: "bg-purple-50"
+    },
+    "Tech Team": { 
+      gradient: "from-gray-500 to-slate-500",
+      bg: "bg-gray-50"
+    },
+    "Social Media Team": { 
+      gradient: "from-teal-500 to-blue-500",
+      bg: "bg-teal-50"
+    }
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6">
       {Object.entries(teams).map(([teamName, members]) => (
         <section key={teamName} className="mb-12">
-          <div className={`rounded-lg p-4 text-white bg-gradient-to-r ${teamColors[teamName] || "from-gray-500 to-slate-500"} flex items-center gap-3`}>
+          <div className={`rounded-lg p-4 text-white bg-gradient-to-r ${teamColors[teamName]?.gradient || "from-gray-500 to-slate-500"} flex items-center gap-3`}>
             <Users className="w-5 h-5 text-white" />
             <h2 className="text-xl font-bold capitalize">{teamName}</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
             {members.map((member, i) => (
-              <div key={i} className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-                <div className="mb-2">
-                  <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+              <div 
+                key={i} 
+                className={`${teamColors[teamName]?.bg || "bg-gray-50"} rounded-xl shadow-lg p-6 border border-gray-200 
+                  hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+              >
+                <div className="text-center mb-4">
+                  <div className="w-24 h-24 mx-auto mb-4 relative">
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full rounded-full bg-gradient-to-r from-gray-200 to-gray-300 
+                        flex items-center justify-center text-2xl font-bold text-gray-600">
+                        {member.name.charAt(0)}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
+                  {member.nameHindi && (
+                    <p className="text-lg text-gray-600 font-hindi">{member.nameHindi}</p>
+                  )}
                 </div>
-                <div className="text-sm text-gray-700 space-y-1">
-                  <p><span className="font-medium">Reg. No:</span> {member.regno}</p>
-                  <p><span className="font-medium">Batch:</span> {member.batch}</p>
-                  <span className="inline-block px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-800 border border-gray-300">
+
+                <div className="text-center mb-4">
+                  <span className="px-3 py-1 text-sm font-semibold rounded-full 
+                    bg-gradient-to-r from-blue-500 to-blue-600 text-white">
                     {member.role}
                   </span>
+                  {member.roleHindi && (
+                    <p className="mt-1 text-blue-600 font-hindi">{member.roleHindi}</p>
+                  )}
                 </div>
+
+                {member.department && (
+                  <p className="text-center text-gray-600 mb-4">{member.department}</p>
+                )}
+
+                <div className="text-sm text-gray-700 space-y-2">
+                  <p><span className="font-medium">Reg. No:</span> {member.regno}</p>
+                  <p><span className="font-medium">Batch:</span> {member.batch}</p>
+                </div>
+
+                {(member.email || member.linkedin || member.instagram) && (
+                  <div className="mt-4 pt-4 border-t border-gray-200 flex justify-center gap-4">
+                    {member.email && (
+                      <a href={`mailto:${member.email}`} className="text-gray-600 hover:text-blue-500">
+                        <Mail className="w-5 h-5" />
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" 
+                        className="text-gray-600 hover:text-blue-700">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
+                    {member.instagram && (
+                      <a href={member.instagram} target="_blank" rel="noopener noreferrer" 
+                        className="text-gray-600 hover:text-pink-600">
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
