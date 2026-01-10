@@ -320,7 +320,7 @@ export default function HomePage() {
             {/* Logo Section */}
             <Link href="/" className="flex items-center space-x-4 group">
               <div className="relative">
-                <div className="w-15 h-15 bg-gradient-to-br from-orange-500 via-white to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
+                <div className="w-15 h-15 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 overflow-hidden">
                   <Image
                     src="/Logo.png"
                     alt="Hindi Club Logo"
@@ -475,103 +475,155 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Enhanced Hero Section */}
+
+
+      {/* Enhanced Hero Section with Better Background */}
 
       <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/pexels-vraj-shah-115200-1721637.jpg')", // replace with your bg image
+        }}
       >
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-rose-50/30 to-pink-50/50"></div>
-          <div className="absolute inset-0 bg-[url('/indian-mandala-pattern.png')] opacity-[0.02] bg-repeat"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10 backdrop-blur-[10px]"></div>
 
-          {/* Floating Elements */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-300 rounded-full animate-pulse opacity-60"></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-rose-300 rounded-full animate-ping opacity-40"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-pink-300 rounded-full animate-bounce opacity-30"></div>
+        {/* Decorative Hindi symbols */}
+        <div className="absolute inset-0 opacity-[0.90] pointer-events-none overflow-hidden">
+          {/* Sacred symbols */}
+          <div className="text-5xl md:text-8xl text-white absolute top-[4%] left-[6%] md:top-[8%] md:left-[12%] -rotate-12 font-light animate-float-slow">
+            ॐ
+          </div>
+          <div className="text-5xl md:text-7xl text-white absolute bottom-[6%] right-[6%] md:bottom-[12%] md:right-[10%] rotate-15 font-light animate-float">
+            श्री
+          </div>
 
-          {/* Gradient Orbs */}
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-orange-200/20 to-rose-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-pink-200/20 to-purple-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+          {/* Consonants */}
+          <div className="text-4xl md:text-6xl text-white absolute top-[10%] right-[6%] md:top-[14%] md:right-[10%] rotate-10 font-light animate-float-fast">
+            क
+          </div>
+          <div className="text-4xl md:text-5xl text-white absolute bottom-[10%] left-[8%] md:bottom-[16%] md:left-[12%] -rotate-8 font-light animate-float">
+            म
+          </div>
+          <div className="text-4xl md:text-6xl text-white absolute top-[50%] right-[30%] md:top-[52%] md:right-[30%] rotate-12 font-light animate-float-slow">
+            र
+          </div>
+          <div className="hidden md:block text-5xl text-white absolute top-[18%] left-[78%] -rotate-6 font-light animate-float-fast">
+            स
+          </div>
+          <div className="hidden md:block text-6xl text-white absolute bottom-[28%] right-[72%] rotate-8 font-light animate-float">
+            न
+          </div>
+          <div className="text-3xl md:text-5xl text-white absolute top-[28%] left-[6%] md:left-[8%] -rotate-10 font-light animate-float">
+            त
+          </div>
+          <div className="text-4xl md:text-6xl text-white absolute bottom-[20%] right-[30%] md:bottom-[20%] md:right-[30%] rotate-7 font-light animate-float-slow">
+            ल
+          </div>
+          <div className="hidden md:block text-5xl text-white absolute top-[70%] left-[64%] -rotate-5 font-light animate-float">
+            व
+          </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
-            {/* Hero Heading with Logo */}
-            <div className="flex flex-col items-center mb-12 animate-fade-in-up">
-              {/* Logo */}
-              
-              <br/>
-              <br/>
-              <br/>
-              <div className="inline-flex items-center justify-center w-70 h-25 bg-gradient-to-br from-orange-500 via-rose-500 to-pink-500 rounded-2xl shadow-2xl mb-6 hover:scale-105 transition-transform duration-500">
-                <img
-                  src="/VIT-Bhopal-logo.png"
-                  alt="VIT Bhopal Logo"
-                  className="w-70 h-25 object-contain"
-                  style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.10))" }}
-                />
-                
-              </div>
+          {/* Vowels */}
+          <div className="text-3xl md:text-4xl text-white absolute top-[24%] right-[14%] md:top-[26%] md:right-[14%] rotate-6 font-light animate-float-fast">
+            अ
+          </div>
+          <div className="text-3xl md:text-4xl text-white absolute bottom-[26%] left-[16%] md:bottom-[32%] md:left-[18%] -rotate-4 font-light animate-float">
+            आ
+          </div>
+          <div className="text-3xl md:text-4xl text-white absolute top-[64%] left-[20%] md:top-[66%] md:left-[22%] rotate-8 font-light animate-float-slow">इ</div>
+          <div className="text-3xl md:text-4xl text-white absolute top-[14%] left-[66%] md:top-[20%] md:left-[64%] -rotate-10 font-light animate-float">
+            उ
+          </div>
 
-              {/* Headings */}
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent">
-                Hindi Club
-              </h1>
-              <h2
-                className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-rose-600 to-pink-600 bg-clip-text text-transparent hindi-text"
-                style={{
-                  fontFamily: "'Samarkan', Arial, sans-serif",
-                  lineHeight: "1.5",
-                  paddingTop: "0.75rem",
-                  paddingBottom: "0.25rem",
-                }}
-              >
-                हिंदी क्लब
-              </h2>
-              <div className="flex items-center justify-center space-x-4 mt-4">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-orange-400"></div>
-                <Star className="w-6 h-6 text-yellow-500" />
-                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-rose-400"></div>
-              </div>
-            </div>
+          {/* Compound letters */}
+          <div className="hidden md:block text-5xl text-white absolute top-[12%] right-[42%] rotate-13 font-light animate-float">
+            क्ष
+          </div>
+          <div className="text-3xl md:text-4xl text-white absolute bottom-[8%] left-[42%] md:bottom-[10%] md:left-[40%] -rotate-11 font-light animate-float-slow">
+            ज्ञ
+          </div>
 
-            {/* Subtitle */}
-            <div className="space-y-4 mb-12 animate-fade-in-up delay-500">
-              <p className="text-2xl md:text-3xl font-semibold text-gray-800">
-                VIT Bhopal University
-              </p>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Preserving and promoting Hindi language and culture through innovative
-                programs and cultural excellence
-              </p>
-              <p className="text-base md:text-lg text-gray-500 hindi-text">
-                भाषा की शक्ति से जुड़ें, संस्कृति का सम्मान करें
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-up delay-700">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-rose-500 hover:from-orange-600 hover:to-rose-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                <Heart className="w-5 h-5 mr-2" />
-                Join Our Community
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-gray-300 text-gray-700 hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 bg-transparent"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                Explore Events
-              </Button>
-            </div>
+          {/* Cultural words */}
+          <div className="hidden md:block text-5xl text-white absolute top-[30%] right-[6%] -rotate-12 font-light animate-float-fast">
+            सत्य
+          </div>
+          <div className="text-3xl md:text-4xl text-white absolute bottom-[28%] left-[8%] md:bottom-[30%] md:left-[10%] rotate-14 font-light animate-float">
+            शांति
+          </div>
+          <div className="hidden md:block text-5xl text-white absolute top-[40%] left-[8%] rotate-10 font-light animate-float">
+            कला
+          </div>
+          <div className="hidden md:block text-3xl md:text-4xl text-white absolute bottom-[18%] right-[18%] md:bottom-[20%] md:right-[20%] -rotate-8 font-light animate-float-slow">लेख</div>
+          <div className="hidden md:block text-5xl text-white absolute top-[55%] left-[85%] rotate-8 font-light animate-float-fast">
+            कविताएँ
           </div>
         </div>
+
+        {/* Main Hero Content */}
+        <div className="relative z-10">
+          <h1 className="text-6xl md:text-8xl font-bold text-white hover:scale-105 transition-transform duration-500 cursor-default">
+            Hindi Club
+          </h1>
+          <h2
+            className="text-4xl md:text-6xl font-bold text-white hindi-text hover:scale-105 transition-transform duration-500 cursor-default"
+            style={{
+              fontFamily: "'Samarkan', Arial, sans-serif",
+              lineHeight: "1.5",
+              paddingTop: "0.75rem",
+              paddingBottom: "0.25rem",
+            }}
+          >
+            हिंदी क्लब
+          </h2>
+          <p className="mt-6 text-lg text-white/100">VIT Bhopal University</p>
+          <p className="text-md justify text-white/100 mt-2">
+            Preserving and promoting Hindi language and culture through innovative programs and cultural excellence
+          </p>
+          <p className="text-md text-white/100 mt-2">
+            भाषा की शक्ति से जुड़ें, संस्कृति का सम्मान करें
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-8 flex justify-center gap-4">
+            <button className="px-6 py-3 rounded-full bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg transition">
+              Join Our Community
+            </button>
+            <button className="px-6 py-3 rounded-full bg-white/70 hover:bg-white/90 text-gray-800 font-semibold shadow-md backdrop-blur transition">
+              Explore Events
+            </button>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style jsx>{`
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    .animate-float-slow {
+      animation: float 9s ease-in-out infinite;
+    }
+    .animate-float-fast {
+      animation: float 4s ease-in-out infinite;
+    }
+  `}</style>
       </section>
+
+
+
+
+
 
       {/* Achievement Stats */}
       <div className="w-full flex justify-center px-4">
@@ -659,9 +711,9 @@ export default function HomePage() {
 
 
 
-    {/*new about us section */}
+      {/*new about us section */}
       <section id="about" className="py-24 bg-gradient-to-br from-white to-gray-50">
-        
+
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-20">
